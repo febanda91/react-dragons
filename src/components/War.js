@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import DragonCard from './DragonCard'
 class War extends Component{
 
     render(){
@@ -7,7 +7,9 @@ class War extends Component{
         return (
             <div style={{float:'left', width:'40%', padding:'5%', backgroundColor:'#f98181'}}>
                 <h1>War</h1>
-                Render Dragons Here
+                {this.props.dragons.map(dragon => 
+            <DragonCard key={dragon.id} selectedDragon={dragon} homeMode={this.props.sendHome}
+            />)}
             </div>
         )
     }
